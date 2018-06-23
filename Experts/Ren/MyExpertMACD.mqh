@@ -59,13 +59,13 @@ bool MyExpertMACD::Processing(void)
 	{
 		if(lastTrend == TREND_SOFT_DOWN && trend == TREND_HARD_UP)
 		{
-			trade.OrderOpen(MY_ORDER_BUY);
 			trade.OrderClose(MY_ORDER_BUY);
+			trade.OrderOpen(MY_ORDER_BUY);
 		}
 		if(lastTrend == TREND_SOFT_UP && trend == TREND_HARD_DOWN)
 		{
-			trade.OrderOpen(MY_ORDER_SELL);
 			trade.OrderClose(MY_ORDER_SELL);
+			trade.OrderOpen(MY_ORDER_SELL);
 		}
 		lastTrend = trend;
 	}

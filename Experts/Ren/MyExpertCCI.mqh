@@ -1,29 +1,29 @@
 
-#include "MySignalEMA.mqh"
+#include "MySignalCCI.mqh"
 #include "MyTrade.mqh"
 
-class MyExpertEMA
+class MyExpertCCI
 {
 	MyTrade		trade;
-	MySignalEMA trendSignal;
+	MySignalCCI trendSignal;
 public:
-	MyExpertEMA(void);
-   	~MyExpertEMA(void);
+	MyExpertCCI(void);
+   	~MyExpertCCI(void);
    	bool Init(ulong magic_number, double lots, double take_profit, double stop_loss);
    	bool Processing(void);
    	void OnTick(void);
 };
 
-MyExpertEMA::MyExpertEMA(void)
+MyExpertCCI::MyExpertCCI(void)
 {
 	
 }
 
-MyExpertEMA::~MyExpertEMA(void)
+MyExpertCCI::~MyExpertCCI(void)
 {
 	trendSignal.DeInit();
 }
-bool MyExpertEMA::Init(ulong magic_number, double lots, double take_profit, double stop_loss)
+bool MyExpertCCI::Init(ulong magic_number, double lots, double take_profit, double stop_loss)
 {
 	if(!trade.Init(magic_number, lots, take_profit, stop_loss))
 		return false;
@@ -39,7 +39,7 @@ bool MyExpertEMA::Init(ulong magic_number, double lots, double take_profit, doub
 
 
 
-bool MyExpertEMA::Processing(void)
+bool MyExpertCCI::Processing(void)
 {
 	static TREND_SIGNAL lastTrend = TREND_FLAT;
 	if(!trade.IsTradeTime())
@@ -75,7 +75,7 @@ bool MyExpertEMA::Processing(void)
 }
 
 
-void MyExpertEMA::OnTick(void)
+void MyExpertCCI::OnTick(void)
 {
 	Processing();
 }

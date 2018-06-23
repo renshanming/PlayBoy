@@ -12,6 +12,11 @@
 #include "MyExpertTEMA.mqh"
 #include "MyExpertEMA.mqh"
 #include "MyExpertMA.mqh"
+#include "MyExpertFraSMA.mqh"
+#include "MyExpertNRTR.mqh"
+#include "MyExpertTrix.mqh"
+#include "MyExpertZigZag.mqh"
+#include "MyExpertCCI.mqh"
 #include "MyExpert.mqh"
 
 input ulong  MagicNumber	  = 1863473;
@@ -26,7 +31,12 @@ input int    InpTrailingStop  = 0.0;  // Trailing Stop Level (in pips)
 //MyExpertTEMA expert;
 //MyExpertVIDYA expert;
 //MyExpertEMA expert;
-MyExpertMA expert;
+//MyExpertMA expert;
+//MyExpertFraSMA expert;
+//MyExpertNRTR expert;
+//MyExpertTrix expert;
+//MyExpertZigZag expert;
+MyExpertCCI expert;
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+

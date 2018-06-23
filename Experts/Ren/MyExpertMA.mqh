@@ -59,13 +59,13 @@ bool MyExpertMA::Processing(void)
 	{
 		if(lastTrend != TREND_UP && trend == TREND_UP)
 		{
-			trade.OrderOpen(MY_ORDER_BUY);
 			trade.OrderClose(MY_ORDER_BUY);
+			trade.OrderOpen(MY_ORDER_BUY);
 		}
 		if(lastTrend != TREND_DOWN && trend == TREND_DOWN)
 		{
-			trade.OrderOpen(MY_ORDER_SELL);
 			trade.OrderClose(MY_ORDER_SELL);
+			trade.OrderOpen(MY_ORDER_SELL);
 		}
 		lastTrend = trend;
 	}
